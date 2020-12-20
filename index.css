@@ -1,0 +1,761 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    width: 80%;
+    padding-top: 5%  ;
+    padding-bottom: 5%;
+    margin: 0 auto;
+}
+
+nav{
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+nav.scroll{
+    background-image: linear-gradient(to left, #67C3F3,#5A98F2);
+    color: white;
+}
+
+nav.scroll li a {
+    color: white;
+}
+nav.scroll .text-logo{
+    background-color:white ;
+}
+nav.scroll .text-logo p{
+   color: #67C3F3 ;
+   font-weight: bold;
+}
+.nav{
+    height: 6rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.text-logo {
+    background-color: rgb(11, 112, 243);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+    border-radius: 50%;
+}
+.text-logo p{
+    padding-top: 8px;
+    padding-left: 13px;
+    color: white;
+    font-weight: bold;
+}
+.text-logo span{
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: bold
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    /* width: 88vw; */
+    float: right;
+    margin-left: auto;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    /* color: white; */
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    background-color:blue;
+    position: absolute;
+    transition: all ease-in-out 250ms;
+    margin: 0 0 0 10%;
+}
+.nav-links li a:hover::before{
+    width: 80%;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+        width: 100%;
+    }
+    .nav{
+        height: 40vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background-image: linear-gradient(to left, #67C3F3,#5A98F2);
+        height: 50vh;
+        padding-top: 200px;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+        margin-top: -100px;
+    }
+    .nav-links li a{
+        color: white;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* header section style */
+
+.header-section{
+    padding-top: 100px;
+    background-image: url("./asset\ for\ contest/bg1.png ");
+    background-position: -40px 100px;
+    background-repeat: no-repeat;
+}
+.grid-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.image{
+    max-width: 100%;
+}
+
+.header-text{
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 10%  ;
+    padding-bottom: 5%;
+    margin: 0 auto;
+    width: 80%;
+}
+.header-text h1{
+    font-size: 50px;
+    font-weight: bold;
+    
+}
+.header-text p{
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 30px;
+}
+.header-text .consult_btn{
+    margin-top: 30px;
+    font-size: 20px;
+    width: 170px;
+    height: 50px;
+    background-color: blue;
+    display: flex; 
+    flex-flow: column nowrap; 
+    justify-content: center; 
+    border-radius: 50px;
+}
+.header-text .consult_btn p{
+    color: white;
+    text-align: center; 
+    margin: 0 auto; 
+}
+
+/* Service section style */
+
+.service-text h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.service-text p{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 30px;
+}
+.grid-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    width: 65%;
+    margin: 0 auto;
+}
+.card{
+    box-shadow: 10px 40px 50px rgba(229, 233, 246, 0.4); 
+    border-radius: 15px;  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    background-color: white;
+}
+.card-text{
+    width: 300px;
+    margin: 0 auto;
+    width: 90%;
+}
+.card-text h2{
+    font-weight: bold;
+}
+.card-text p{
+    margin-top: 30px;
+    line-height: 30px;
+}
+
+.learn-more{
+    width: 150px;
+    height: 30px;
+    border: 1px solid blue;
+    display: flex; 
+    flex-flow: column nowrap; 
+    justify-content: center; 
+    border-radius: 20px;
+}
+
+.service-section{
+    background-image: url("./asset\ for\ contest/vector1.png"), url("./asset\ for\ contest/bg1.png");
+    background-repeat: no-repeat;
+    background-position: 0 350px, 1200px 700px ;
+    background-color: transparent;
+}
+
+.service-section .learn-more { 
+    color: blue;
+    text-align: center; 
+    margin: 0 auto; 
+}
+
+/* leading and download section style */
+
+.leading-section{
+    background-image: url("./asset\ for\ contest/bg1.png ");
+    background-position: 1450px 510px;
+    background-repeat: no-repeat;
+}
+
+.grid-text{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 10%  ;
+    padding-bottom: 5%;
+}
+
+.grid-text h1{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.grid-text .text{
+  margin-top: 40px;
+  line-height: 30px;
+}
+
+.grid-text .learn-more {
+    margin-top: 30px;
+    color: blue;
+    text-align: center; 
+}
+.small-screen{
+    display: none;
+}
+/* slideshow section */
+
+.slideshow-section{
+    background-image: url("./asset\ for\ contest/bg1.png ");
+    background-position: 220px 200px;
+    background-repeat: no-repeat;
+}
+.grid-slideshow{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.customer-text{
+    background-image: url("./asset\ for\ contest/bg.png ");
+    background-size: 100px 80px;
+    background-position:925px -14px;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 5%;
+}
+.customer_info{
+    display: flex; 
+    flex-flow: column nowrap; 
+    justify-content: center; 
+    margin-left: -50px;
+}
+
+.customer-say{
+    display: flex; 
+    flex-flow: column nowrap; 
+    justify-content: center; 
+    font-size: 19px;
+}
+.slideshow-container {
+    max-width: 65%;
+    position: relative;
+    margin: auto;
+  }
+
+.mySlides {
+    background-image: linear-gradient(to left, #67C3F3,#5A98F2);
+    border-radius: 10px;
+    color: white;
+}
+  
+  /* Next & previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin: 0 20px;
+    display: inline-block;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color:  #67C3F3;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .active, .dot:hover {
+    background-color:blue;
+  }
+
+
+/* latest article */
+.latestarticle-section{
+    background-image: url("./asset\ for\ contest/bg1.png"),url("./asset\ for\ contest/vector.png") ;
+    background-repeat: no-repeat;
+    background-position: 210px 70px, 1045px 60px;
+}
+.readmore{
+    color: blue;
+}
+.latestarticle-section h1{
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+.latestarticle-section .learn-more { 
+    color: blue;
+    text-align: center; 
+    margin: 0 auto; 
+    margin-top: 50px;
+}
+
+/* footer  */
+.T-logo {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+}
+.T-logo p{
+    padding-top: 8px;
+    padding-left: 13px;
+    color:  #67C3F3;
+    font-weight: bold;
+}
+.T-logo span{
+    padding-top: 8px;
+    padding-left: 20px;
+    font-weight: bold
+}
+.footer-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.footer-grid ul li{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    line-height: 38px;
+    font-size: 16px;
+}
+.footer-grid ul li a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    line-height: 38px;
+    font-size: 16px;
+}
+.logo-part{
+    width: 60%;
+    margin: 0 auto;
+}
+.footer-grid h3{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer{
+    margin-top: 50px;
+    color: white;
+    background-image: linear-gradient(to bottom, #67C3F3,#5A98F2);
+}
+.footer-text{
+    margin-top: 10px;
+    line-height: 30px;
+    font-size: 18px;
+    align-items: center;
+}
+.footer .grid-section{
+    background-image: url("./asset\ for\ contest/bg.png ");
+    background-size: 150px 150px;
+    background-position:-77px 140px;
+    background-repeat: no-repeat;
+}
+.copyright{
+    font-size: 16px;
+    margin-top: 20px;
+}
+@media screen and (max-width: 1400px){
+    .header-section{
+        background-image: none;
+    }
+    .service-section{
+        background-image:none;
+    }
+    .leading-section{
+        background-image: none;
+    }
+    .slideshow-section{
+        background-image: none;
+    }
+    .customer-text{
+        background-image: none;
+    }
+    .latestarticle-section{
+        background-image: none;
+    }  
+    .footer .grid-section{
+        background-image: none;
+    }
+
+    .header-text h1{
+        font-size: 35px;
+    }
+    .header-text{
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 10%  ;
+        padding-bottom: 5%;
+        margin: 0 auto;
+        width: 90%;
+    }
+    .grid-card{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        width: 90%;
+    }
+
+    .grid-text{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 10%  ;
+        padding-bottom: 5%;
+    }
+    
+    .grid-text h1{
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .customer_info{
+        display: flex; 
+        flex-flow: column nowrap; 
+        justify-content: center; 
+        margin-left: -10px;
+    }
+    .slideshow-container {
+        max-width: 80%;
+        position: relative;
+        margin: auto;
+      }
+
+    .footer-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .logo-part{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .customer_info{
+        display: flex; 
+        flex-flow: column nowrap; 
+        justify-content: center; 
+        margin-left: -10px;
+    }
+    .slideshow-container {
+        max-width: 80%;
+        position: relative;
+        margin: auto;
+      }
+      .mySlides .grid-section{
+        display: grid;
+        grid-template-columns: auto;
+}
+}
+
+@media screen and (max-width: 900px){
+    .header-text h1{
+        font-size: 30px;
+    }
+    .grid-card{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        width: 90%;
+
+    }
+
+    .grid-text{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 10%  ;
+        padding-bottom: 5%;
+    }
+    
+    .grid-text h1{
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .customer_info{
+        display: flex; 
+        flex-flow: column nowrap; 
+        justify-content: center; 
+        /* margin-left: -10px; */
+    }
+    .slideshow-container {
+        max-width: 90%;
+        position: relative;
+        margin: auto;
+      }
+    .mySlides .grid-section{
+            display: grid;
+            grid-template-columns: auto;
+    }
+    .footer-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+    .logo-part{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .grid-section{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .header-text{
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 10%  ;
+        padding-bottom: 5%;
+        margin: 0 auto;
+        width: 100%;
+    }
+    .header-text h1{
+        font-size: 30px;
+        width: 100%;
+        padding-top: 0  ;
+        padding-bottom:0;
+    }
+    .service-text p{
+        text-align: start;
+        width: 100%;
+    }
+
+    .grid-text{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding-top: 10%  ;
+        padding-bottom: 5%;
+    }
+    .md-screen{
+        display: none;
+    }
+    .small-screen{
+        display: block;
+    }
+    .footer-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 599px){
+    .grid-card{
+        display: grid;
+        grid-template-columns: auto;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+        width: 80%;
+        margin: 0 auto;
+
+    }
+    .card{
+        /* width:370px; */
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); 
+        border-radius: 15px;  
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 0 auto;
+    }
+    .service-section .learn-more { 
+        color: blue;
+        text-align: center; 
+        margin: 0 auto; 
+    }
+    .footer-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
